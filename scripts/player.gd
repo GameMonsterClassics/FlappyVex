@@ -4,7 +4,7 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var max_falling_velocity: int = 700
 var is_flying: bool = false
 var starting_position: Vector2 = Vector2(128, 256)
-var flap_force: int = -550
+var flap_force: int = -400
 var player_dead: bool = false
 
 @onready var game_manager: Node = %GameManager
@@ -37,7 +37,5 @@ func flap() -> void:
 func is_player_dead() -> void:
 	if game_manager.player_touches_ground:
 		queue_free()
-		game_manager.player_dead = true
 	elif position.y < 0:
 		queue_free()
-		game_manager.player_dead = true
