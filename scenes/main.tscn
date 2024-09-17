@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://hhkpqiopijll"]
+[gd_scene load_steps=6 format=3 uid="uid://hhkpqiopijll"]
 
 [ext_resource type="Texture2D" uid="uid://rgm4prqrhkcu" path="res://assets/background-day.png" id="1_nq6i1"]
 [ext_resource type="PackedScene" uid="uid://dninbg4du034k" path="res://scenes/ground.tscn" id="2_5pcyg"]
 [ext_resource type="PackedScene" uid="uid://bxgn5wgsaqmwm" path="res://scenes/player.tscn" id="2_k25ai"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_ln4vv"]
+[ext_resource type="PackedScene" uid="uid://dvnc5dtybawfl" path="res://scenes/pipes.tscn" id="5_t6gqx"]
 
 [node name="Main" type="Node2D"]
 
@@ -15,7 +16,11 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="Ground" parent="." instance=ExtResource("2_5pcyg")]
+z_index = 1
 
 [node name="Player" parent="." instance=ExtResource("2_k25ai")]
-position = Vector2(128, 0)
+position = Vector2(128, 256)
 script = ExtResource("4_ln4vv")
+
+[node name="Pipes" parent="." instance=ExtResource("5_t6gqx")]
+position = Vector2(390, 285)
