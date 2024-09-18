@@ -21,34 +21,34 @@ size = Vector2(20, 120)
 [node name="Pipes" type="Area2D"]
 script = ExtResource("1_hxo41")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xbyrq")
-offset = Vector2(0, 220)
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="UpPipe" type="Sprite2D" parent="."]
 texture = ExtResource("1_xbyrq")
 offset = Vector2(0, -220)
 flip_v = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="UpPipeCollision1" type="CollisionShape2D" parent="."]
 position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_hd5wl")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="UpPipeCollision2" type="CollisionShape2D" parent="."]
 position = Vector2(0, -232)
 shape = SubResource("RectangleShape2D_ij4bn")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+[node name="DownPipe" type="Sprite2D" parent="."]
+texture = ExtResource("1_xbyrq")
+offset = Vector2(0, 220)
+
+[node name="DownPipeCollision1" type="CollisionShape2D" parent="."]
 position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_plhri")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+[node name="DownPipeCollision2" type="CollisionShape2D" parent="."]
 position = Vector2(0, 232)
 shape = SubResource("RectangleShape2D_c67ci")
 
 [node name="Score Area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Score Area"]
+[node name="ScoreAreaCollision" type="CollisionShape2D" parent="Score Area"]
 position = Vector2(36, 0)
 shape = SubResource("RectangleShape2D_3tgvs")
 

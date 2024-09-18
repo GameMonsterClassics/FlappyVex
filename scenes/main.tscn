@@ -21,9 +21,9 @@ z_index = 1
 [node name="Player" parent="." instance=ExtResource("2_k25ai")]
 position = Vector2(128, 256)
 
-[node name="Pipes" parent="." instance=ExtResource("5_t6gqx")]
-position = Vector2(390, 285)
-
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_tv11o")
+
+[node name="Pipes" parent="." instance=ExtResource("5_t6gqx")]
+position = Vector2(111, 241)

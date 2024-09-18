@@ -3,6 +3,8 @@ extends Node
 var game_running: bool = false
 var game_over: bool = false
 var player_touches_ground: bool = false
+var player_hit: bool = false
+var score: int = 0
 @onready var player: CharacterBody2D = $"../Player"
 var scene_path: String = "res://scenes/main.tscn"
 
@@ -15,12 +17,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and not game_running and not game_over:
 		start_game()
 	elif event.is_action_pressed("ui_accept") and game_over:
-		restart_current_scene()
-
-
-func restart_current_scene():
-	if scene_path:
-		get_tree().change_scene_to_file(scene_path)
+		get_tree().reload_current_scene()
 
 
 func reset() -> void:
@@ -48,3 +45,8 @@ func player_dead() -> void:
 	if not player:
 		print("Player dead")
 		game_over = true
+
+
+func add_score() -> void:
+	score += 1
+	print("Score: " + str(score))
