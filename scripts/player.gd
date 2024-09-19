@@ -7,7 +7,7 @@ var starting_position: Vector2 = Vector2(128, 256)
 var flap_force: int = -400
 var player_dead: bool = false
 
-@onready var game_manager: Node = %GameManager
+@onready var main: Node2D = get_tree().current_scene
 
 
 func _ready() -> void:
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if not game_manager.game_running:
+	if not main.game_running:
 		return
 	
 	is_player_dead()
@@ -35,7 +35,15 @@ func flap() -> void:
 
 
 func is_player_dead() -> void:
-	if game_manager.player_touches_ground:
+	if main.player_touches_ground:
 		queue_free()
+		main.game_running = false
+		print("Player is dead.")
 	elif position.y < 0:
 		queue_free()
+		main.game_running = false
+		print("Player is dead.")
+	elif main.player_hit:
+		queue_free()
+		main.game_running = false
+		print("Player is dead.")

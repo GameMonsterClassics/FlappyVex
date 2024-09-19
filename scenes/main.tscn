@@ -1,12 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://hhkpqiopijll"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_gdotp"]
 [ext_resource type="Texture2D" uid="uid://rgm4prqrhkcu" path="res://assets/background-day.png" id="1_nq6i1"]
 [ext_resource type="PackedScene" uid="uid://dninbg4du034k" path="res://scenes/ground.tscn" id="2_5pcyg"]
 [ext_resource type="PackedScene" uid="uid://bxgn5wgsaqmwm" path="res://scenes/player.tscn" id="2_k25ai"]
 [ext_resource type="PackedScene" uid="uid://dvnc5dtybawfl" path="res://scenes/pipes.tscn" id="5_t6gqx"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="6_tv11o"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_gdotp")
+pipe_scene = ExtResource("5_t6gqx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 640.0
@@ -21,9 +23,7 @@ z_index = 1
 [node name="Player" parent="." instance=ExtResource("2_k25ai")]
 position = Vector2(128, 256)
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("6_tv11o")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
 
-[node name="Pipes" parent="." instance=ExtResource("5_t6gqx")]
-position = Vector2(111, 241)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

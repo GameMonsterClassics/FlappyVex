@@ -3,7 +3,8 @@ extends Area2D
 var scroll
 const SCROLL_SPEED : float = 2.5
 var screen_size : Vector2i
-@onready var game_manager: Node = %GameManager
+
+@onready var main: Node2D = get_tree().current_scene
 
 
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if not game_manager.game_running:
+	if not main.game_running:
 		return
 	
 	scroll += SCROLL_SPEED
@@ -25,4 +26,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
-		game_manager.player_touches_ground = true
+		main.player_touches_ground = true
