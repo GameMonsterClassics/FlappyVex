@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drn7wnbjs4b7s"
-path="res://.godot/imported/yellowbird-midflap.png-844440a940a7ab76961b63217d59ef0e.ctex"
+uid="uid://dorkcc6kl6lbx"
+path="res://.godot/imported/player-down.png-c636a31c62caf4153259f25b5428f62d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/yellowbird-midflap.png"
-dest_files=["res://.godot/imported/yellowbird-midflap.png-844440a940a7ab76961b63217d59ef0e.ctex"]
+source_file="res://assets/player-down.png"
+dest_files=["res://.godot/imported/player-down.png-c636a31c62caf4153259f25b5428f62d.ctex"]
 
 [params]
 
