@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://hhkpqiopijll"]
+[gd_scene load_steps=9 format=3 uid="uid://hhkpqiopijll"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gdotp"]
 [ext_resource type="PackedScene" uid="uid://dninbg4du034k" path="res://scenes/ground.tscn" id="2_5pcyg"]
 [ext_resource type="PackedScene" uid="uid://bxgn5wgsaqmwm" path="res://scenes/player.tscn" id="2_k25ai"]
 [ext_resource type="Texture2D" uid="uid://cpeyj80kwc1tp" path="res://assets/background.png" id="3_yfbme"]
 [ext_resource type="PackedScene" uid="uid://dvnc5dtybawfl" path="res://scenes/pipes.tscn" id="5_t6gqx"]
+[ext_resource type="PackedScene" uid="uid://dr230ogr3fo6b" path="res://scenes/main_menu.tscn" id="6_bspj1"]
+[ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="7_jxws7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5p18v"]
+font = ExtResource("7_jxws7")
+font_size = 64
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gdotp")
@@ -26,5 +32,24 @@ position = Vector2(128, 256)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("6_bspj1")]
+z_index = 2
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 96.0
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_5p18v")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

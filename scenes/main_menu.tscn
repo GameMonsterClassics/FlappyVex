@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr230ogr3fo6b"]
+
+[ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_1oefd"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_loxv1"]
+[ext_resource type="Texture2D" uid="uid://bd5xnd8qs0puh" path="res://assets/title.png" id="2_lfio8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h53r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7y4y"]
+bg_color = Color(0.111197, 0.111197, 0.111197, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuy7y"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to5s7"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vc2n8"]
+texture = ExtResource("2_lfio8")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_loxv1")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -116.0
+offset_right = 72.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_1oefd")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1h53r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w7y4y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cuy7y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_to5s7")
+text = "Play"
+
+[node name="Title" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.5
+offset_top = 64.0
+offset_right = 186.5
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vc2n8")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,10 +1,8 @@
 extends Node2D
 
-var game_running: bool = false
-var game_over: bool = false
-var player_touches_ground: bool = false
-var player_hit: bool = false
+var player_dead: bool = false
 var score: int = 0
+var game_stage = "not_running"
 
 var min_y_pipe = 100
 var max_y_pipe = 300
@@ -28,54 +26,46 @@ func _ready() -> void:
 	
 	add_child(preloaded_pipe_1)
 	add_child(preloaded_pipe_2)
+	
+	$CanvasLayer/Score.hide()
 
 
 func _process(delta: float) -> void:
-	player_dead()
+	player_death()
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept") and not game_running and not game_over:
+	if event.is_action_pressed("ui_accept") and game_stage == "not_running":
 		start_game()
-	elif event.is_action_pressed("ui_accept") and game_over:
+	elif event.is_action_pressed("ui_accept") and game_stage == "over":
 		get_tree().reload_current_scene()
 
 
-func reset() -> void:
-	player_touches_ground = false
-	print("Session has been reset.")
-
-
 func start_game() -> void:
-	if not player:
-		print("No player.")
+	if game_stage == "running":
 		return
 	
-	if game_running:
-		return
+	$CanvasLayer/MainMenu.hide()
+	$CanvasLayer/Score.show()
 	
-	reset()
-	
-	if Input.is_action_just_pressed("ui_accept"):
-		print("Game has been started.")
-		game_running = true
-		player.flap()
+	game_stage = "running"
+	player.flap()
 	
 	$Timer.start()
 
 
-func player_dead() -> void:
+func player_death() -> void:
 	if not player:
-		game_over = true
+		game_stage = "over"
 
 
 func add_score() -> void:
 	score += 1
-	print("Score: " + str(score))
+	$CanvasLayer/Score.text = str(score)
 
 
 func generate_pipe() -> void:
-	if not game_running:
+	if game_stage in ["not_running", "over"]:
 		return
 	
 	var instance = pipe_scene.instantiate()

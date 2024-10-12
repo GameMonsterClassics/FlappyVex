@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if not main.game_running:
+	if main.game_stage in ["not_running", "over"]:
 		return
 	
 	scroll += SCROLL_SPEED
@@ -26,4 +26,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
-		main.player_touches_ground = true
+		main.player_dead = true
