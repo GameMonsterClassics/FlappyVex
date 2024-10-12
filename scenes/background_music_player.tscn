@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmqf1pp24u767"]
+
+[ext_resource type="Script" path="res://scripts/background_music_player.gd" id="1_cujvf"]
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer"]
+script = ExtResource("1_cujvf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

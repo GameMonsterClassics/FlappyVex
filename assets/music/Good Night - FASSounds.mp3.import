@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4spg1136yg7n"
+path="res://.godot/imported/Good Night - FASSounds.mp3-0258b7990d37ac4a014fb87e307d5d70.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Good Night - FASSounds.mp3"
+dest_files=["res://.godot/imported/Good Night - FASSounds.mp3-0258b7990d37ac4a014fb87e307d5d70.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

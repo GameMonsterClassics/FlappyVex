@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bew62kjmkg3vo"
+path="res://.godot/imported/Backyard - Lofium.mp3-d4c2343bd09e33e6e4622337afd1295f.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Backyard - Lofium.mp3"
+dest_files=["res://.godot/imported/Backyard - Lofium.mp3-d4c2343bd09e33e6e4622337afd1295f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
