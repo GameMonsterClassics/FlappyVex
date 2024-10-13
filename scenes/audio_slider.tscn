@@ -21,6 +21,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "<type> Volume"
 label_settings = SubResource("LabelSettings_ak7tp")
 
