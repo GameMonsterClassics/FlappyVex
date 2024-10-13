@@ -103,10 +103,6 @@ stat_type = "total_flap"
 layout_mode = 2
 stat_type = "total_run"
 
-[node name="TotalTime" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_rym15")]
-layout_mode = 2
-stat_type = "total_time"
-
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 3

@@ -19,6 +19,3 @@ func _ready() -> void:
 	elif stat_type == "total_run":
 		label.text = "Total Run"
 		label_2.text = str(SaveFileHandler.total_run)
-	elif stat_type == "total_time":
-		label.text = "Total Time (min)"
-		label_2.text = str(SaveFileHandler.total_time)

@@ -6,7 +6,6 @@ var high_score = 0
 var total_score = 0
 var total_flap = 0
 var total_run = 0
-var total_time = 0
 
 
 func _ready() -> void:
@@ -18,8 +17,7 @@ func save():
 		"high_score": high_score,
 		"total_score": total_score,
 		"total_flap": total_flap,
-		"total_run": total_run,
-		"total_time": total_time
+		"total_run": total_run
 	}
 	return save_dict
 
@@ -48,4 +46,3 @@ func load_game():
 		total_score = node_data["total_score"]
 		total_flap = node_data["total_flap"]
 		total_run = node_data["total_run"]
-		total_time = node_data["total_time"]
