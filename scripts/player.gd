@@ -40,12 +40,10 @@ func _physics_process(delta: float) -> void:
 
 func flap() -> void:
 	velocity.y = lerp(velocity.y, float(flap_force), 1)
+	SaveFileHandler.total_flap += 1
 
 
 func player_death() -> void:
-	if main.player_dead:
-		queue_free()
-		main.game_stage = "over"
-	elif position.y < 0:
+	if main.player_dead or position.y < 0:
 		queue_free()
 		main.game_stage = "over"

@@ -37,6 +37,9 @@ func _process(delta: float) -> void:
 	if game_stage == "over":
 		$CanvasLayer/GameOverMenu.show()
 		$CanvasLayer/Score.hide()
+		SaveFileHandler.total_run += 1
+		SaveFileHandler.total_time += int(Time.get_ticks_msec() / (1000 * 3600))
+		SaveFileHandler.save_game()
 
 
 func _input(event: InputEvent) -> void:
@@ -62,6 +65,11 @@ func start_game() -> void:
 func add_score() -> void:
 	score += 1
 	$CanvasLayer/Score.text = str(score)
+	
+	SaveFileHandler.total_score += 1
+	
+	if score > SaveFileHandler.high_score:
+		SaveFileHandler.high_score = score
 
 
 func generate_pipe() -> void:
