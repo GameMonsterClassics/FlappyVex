@@ -47,3 +47,6 @@ func player_death() -> void:
 	if main.player_dead or position.y < 0:
 		queue_free()
 		main.game_stage = "over"
+		SaveFileHandler.total_run += 1
+		SaveFileHandler.total_time += int(Time.get_ticks_msec() / (1000 * 60))
+		SaveFileHandler.save_game()

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b452q1llhe8jm"]
+
+[ext_resource type="Script" path="res://scripts/player_stat.gd" id="1_6ahg3"]
+[ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_uiilm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dug5h"]
+font = ExtResource("1_uiilm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6sga0"]
+font = ExtResource("1_uiilm")
+
+[node name="PlayerStat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ahg3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.0
+offset_right = 168.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "<type> Stat"
+label_settings = SubResource("LabelSettings_dug5h")
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_6sga0")

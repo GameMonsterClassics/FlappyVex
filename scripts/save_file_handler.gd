@@ -46,5 +46,6 @@ func load_game():
 		
 		high_score = node_data["high_score"]
 		total_score = node_data["total_score"]
+		total_flap = node_data["total_flap"]
 		total_run = node_data["total_run"]
 		total_time = node_data["total_time"]

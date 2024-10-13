@@ -37,9 +37,6 @@ func _process(delta: float) -> void:
 	if game_stage == "over":
 		$CanvasLayer/GameOverMenu.show()
 		$CanvasLayer/Score.hide()
-		SaveFileHandler.total_run += 1
-		SaveFileHandler.total_time += int(Time.get_ticks_msec() / (1000 * 3600))
-		SaveFileHandler.save_game()
 
 
 func _input(event: InputEvent) -> void:
@@ -92,3 +89,7 @@ func _on_timer_timeout() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/settings_menu.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/player_stats_menu.tscn")
