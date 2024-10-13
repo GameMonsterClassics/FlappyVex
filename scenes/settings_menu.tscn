@@ -85,7 +85,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="MasterV0lume" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_fd57p")]
+[node name="MasterVolume" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_fd57p")]
 layout_mode = 2
 bus_name = "Master"
 

@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cur0k24l4buky" path="res://assets/ground.png" id="2_vrugh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s75rl"]
-size = Vector2(640, 112)
+size = Vector2(2560, 112)
 
 [node name="Ground" type="Area2D"]
 script = ExtResource("1_t7v0k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(320, 456)
+position = Vector2(1280, 456)
 shape = SubResource("RectangleShape2D_s75rl")
 
 [node name="Ground" type="TextureRect" parent="."]
