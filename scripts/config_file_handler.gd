@@ -19,6 +19,17 @@ func _ready() -> void:
 		config.save(SETTINGS_FILE)
 	else:
 		config.load(SETTINGS_FILE)
+	
+	load_settings()
+
+
+func load_settings():
+	var video_settings = load_video_settings()
+	
+	if video_settings.fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
 func save_volume_settings(key: String, value):
