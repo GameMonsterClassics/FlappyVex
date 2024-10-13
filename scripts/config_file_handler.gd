@@ -19,29 +19,6 @@ func _ready() -> void:
 		config.save(SETTINGS_FILE)
 	else:
 		config.load(SETTINGS_FILE)
-	
-	load_settings()
-
-
-func load_settings():
-	var volume_settings = ConfigFileHandler.load_volume_settings()
-	var volume_mute_settings = ConfigFileHandler.load_volume_mute_settings()
-	var video_settings = ConfigFileHandler.load_video_settings()
-	
-	for bus_name in volume_settings:
-		var bus_index = AudioServer.get_bus_index(bus_name)
-		AudioServer.set_bus_volume_db(bus_index, linear_to_db(volume_settings[bus_name]))
-	
-	for bus_name in volume_mute_settings:
-		var bus_index = AudioServer.get_bus_index(bus_name)
-		AudioServer.set_bus_mute(bus_index, volume_mute_settings[bus_name])
-	
-	var fullscreen = video_settings.fullscreen
-	
-	if fullscreen:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
 func save_volume_settings(key: String, value):
