@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca7r8mu62fpv5"]
+
+[ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_337mp"]
+[ext_resource type="Script" path="res://scripts/audio_slider.gd" id="1_mklgu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ak7tp"]
+font = ExtResource("1_337mp")
+
+[node name="AudioSlider" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 40.0
+script = ExtResource("1_mklgu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "<type> Volume"
+label_settings = SubResource("LabelSettings_ak7tp")
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

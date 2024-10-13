@@ -12,6 +12,8 @@ var max_y_pipe = 300
 
 
 func _ready() -> void:
+	$CanvasLayer/MainMenu.show()
+	
 	var preloaded_pipe_1 = pipe_scene.instantiate()
 	var preloaded_pipe_2 = pipe_scene.instantiate()
 	
@@ -28,10 +30,13 @@ func _ready() -> void:
 	add_child(preloaded_pipe_2)
 	
 	$CanvasLayer/Score.hide()
+	$CanvasLayer/GameOverMenu.hide()
 
 
-func _process(delta: float) -> void:
-	player_death()
+func _process(delta: float) -> void:	
+	if game_stage == "over":
+		$CanvasLayer/GameOverMenu.show()
+		$CanvasLayer/Score.hide()
 
 
 func _input(event: InputEvent) -> void:
@@ -54,11 +59,6 @@ func start_game() -> void:
 	$Timer.start()
 
 
-func player_death() -> void:
-	if not player:
-		game_stage = "over"
-
-
 func add_score() -> void:
 	score += 1
 	$CanvasLayer/Score.text = str(score)
@@ -79,4 +79,8 @@ func generate_pipe() -> void:
 
 
 func _on_timer_timeout() -> void:
-	generate_pipe() 
+	generate_pipe()
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/settings_menu.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://hhkpqiopijll"]
+[gd_scene load_steps=10 format=3 uid="uid://hhkpqiopijll"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gdotp"]
 [ext_resource type="PackedScene" uid="uid://dninbg4du034k" path="res://scenes/ground.tscn" id="2_5pcyg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dvnc5dtybawfl" path="res://scenes/pipes.tscn" id="5_t6gqx"]
 [ext_resource type="PackedScene" uid="uid://dr230ogr3fo6b" path="res://scenes/main_menu.tscn" id="6_bspj1"]
 [ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="7_jxws7"]
+[ext_resource type="PackedScene" uid="uid://cw0jv0qxewh7q" path="res://scenes/game_over_menu.tscn" id="8_kt545"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5p18v"]
 font = ExtResource("7_jxws7")
@@ -36,9 +37,11 @@ wait_time = 1.5
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("6_bspj1")]
+visible = false
 z_index = 2
 
 [node name="Score" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -52,4 +55,23 @@ label_settings = SubResource("LabelSettings_5p18v")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource("8_kt545")]
+visible = false
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = -15.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_jxws7")
+text = "S"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

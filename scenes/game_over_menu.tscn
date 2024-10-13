@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw0jv0qxewh7q"]
+
+[ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_bmbns"]
+[ext_resource type="Script" path="res://scripts/game_over_menu.gd" id="1_flxek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2lpr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eo0a3"]
+bg_color = Color(0.111197, 0.111197, 0.111197, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gujex"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tidq7"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_fk6o8"]
+font = ExtResource("1_bmbns")
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-3, 3)
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_flxek")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_bmbns")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b2lpr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eo0a3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gujex")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tidq7")
+text = "Restart"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 64.0
+offset_right = 96.0
+offset_bottom = 131.0
+grow_horizontal = 2
+text = "Game
+  Over"
+label_settings = SubResource("LabelSettings_fk6o8")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqf7xmy1t0kw3"]
+
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_sp3wa"]
+[ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_up3xh"]
+[ext_resource type="PackedScene" uid="uid://ca7r8mu62fpv5" path="res://scenes/audio_slider.tscn" id="3_fd57p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4t1i"]
+bg_color = Color(1, 0.831373, 0.639216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1ahv"]
+bg_color = Color(1, 0.666667, 0.368627, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_apqby"]
+font = ExtResource("1_up3xh")
+font_size = 32
+font_color = Color(0.12549, 0.235294, 0.337255, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-2, 2)
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sp3wa")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v4t1i")
+
+[node name="Header" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1ahv")
+
+[node name="Label" type="Label" parent="Header"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -16.0
+offset_right = 128.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_apqby")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 64
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="MasterV0lume" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_fd57p")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MusicVolume" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_fd57p")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFXVolume" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_fd57p")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Q"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/background_music_player.gd" id="1_cujvf"]
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer"]
+bus = &"Music"
 script = ExtResource("1_cujvf")
 
 [node name="Timer" type="Timer" parent="."]
