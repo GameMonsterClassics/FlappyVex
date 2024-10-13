@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqf7xmy1t0kw3"]
+[gd_scene load_steps=7 format=3 uid="uid://cqf7xmy1t0kw3"]
 
 [ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_sp3wa"]
 [ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_up3xh"]
 [ext_resource type="PackedScene" uid="uid://ca7r8mu62fpv5" path="res://scenes/audio_slider.tscn" id="3_fd57p"]
-[ext_resource type="PackedScene" uid="uid://cq0lgd6cge0m8" path="res://scenes/fullscreen_setting.tscn" id="4_crc5b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4t1i"]
 bg_color = Color(1, 0.831373, 0.639216, 1)
@@ -84,8 +83,6 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_constants/separation = 64
 
 [node name="MasterVolume" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_fd57p")]
@@ -99,9 +96,6 @@ bus_name = "Music"
 [node name="SFXVolume" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_fd57p")]
 layout_mode = 2
 bus_name = "SFX"
-
-[node name="FullscreenSetting" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_crc5b")]
-layout_mode = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

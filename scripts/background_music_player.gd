@@ -54,8 +54,6 @@ func play_random_song():
 		
 		volume_db = -40.0
 		create_fade_in_tween()
-	
-	print("Playing: ", current_song)
 
 
 func _on_finished() -> void:

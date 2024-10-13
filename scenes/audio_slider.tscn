@@ -21,7 +21,6 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 text = "<type> Volume"
 label_settings = SubResource("LabelSettings_ak7tp")
 
@@ -43,5 +42,6 @@ value = 1.0
 layout_mode = 2
 size_flags_vertical = 4
 
+[connection signal="drag_ended" from="VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]

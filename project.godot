@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+ConfigFileHandler="*res://scripts/config_file_handler.gd"
 BackgroundMusicPlayer="*res://scenes/background_music_player.tscn"
 
 [display]
