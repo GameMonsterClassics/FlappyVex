@@ -5,15 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://ca7r8mu62fpv5" path="res://scenes/audio_slider.tscn" id="3_fd57p"]
 [ext_resource type="PackedScene" uid="uid://kw8jg06ktjp4" path="res://scenes/fullscreen_setting.tscn" id="4_rqrou"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4t1i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03qjj"]
 bg_color = Color(1, 0.831373, 0.639216, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.12549, 0.235294, 0.337255, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1ahv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bogw5"]
 bg_color = Color(1, 0.666667, 0.368627, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
 border_color = Color(0.0509804, 0.168627, 0.270588, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_apqby"]
@@ -40,7 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_v4t1i")
+theme_override_styles/panel = SubResource("StyleBoxFlat_03qjj")
 
 [node name="Header" type="Panel" parent="."]
 layout_mode = 1
@@ -48,7 +53,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 64.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_g1ahv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_bogw5")
 
 [node name="Label" type="Label" parent="Header"]
 layout_mode = 1

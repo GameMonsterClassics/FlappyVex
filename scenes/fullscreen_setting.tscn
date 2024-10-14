@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://scripts/fullscreen_setting.gd" id="1_4on4b"]
 [ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_77por"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_dhthb"]
+[sub_resource type="LabelSettings" id="LabelSettings_a5j5t"]
 font = ExtResource("1_77por")
+font_color = Color(0.12549, 0.235294, 0.337255, 1)
 
 [node name="FullscreenSetting" type="Control"]
 layout_mode = 3
@@ -29,7 +30,7 @@ alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "Fullscreen"
-label_settings = SubResource("LabelSettings_dhthb")
+label_settings = SubResource("LabelSettings_a5j5t")
 
 [node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
 layout_mode = 2
