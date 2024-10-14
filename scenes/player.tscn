@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxgn5wgsaqmwm"]
+[gd_scene load_steps=8 format=3 uid="uid://bxgn5wgsaqmwm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_8r4vp"]
 [ext_resource type="Texture2D" uid="uid://dorkcc6kl6lbx" path="res://assets/player-down.png" id="2_cl81s"]
 [ext_resource type="Texture2D" uid="uid://cth53dg518iwb" path="res://assets/player-mid.png" id="3_r71b7"]
 [ext_resource type="Texture2D" uid="uid://cbfw5fieec6i2" path="res://assets/player-up.png" id="4_4wsgv"]
+[ext_resource type="AudioStream" uid="uid://dbe4yu4132ti3" path="res://assets/sfx/blast.wav" id="5_87mue"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_31oxj"]
 animations = [{
@@ -34,3 +35,6 @@ animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_11jam")
+
+[node name="Blast" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_87mue")

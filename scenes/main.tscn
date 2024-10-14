@@ -12,6 +12,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_5p18v"]
 font = ExtResource("7_jxws7")
 font_size = 64
+font_color = Color(1, 0.666667, 0.368627, 1)
+shadow_size = 5
+shadow_color = Color(0.0509804, 0.168627, 0.270588, 1)
+shadow_offset = Vector2(-2, 2)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gdotp")

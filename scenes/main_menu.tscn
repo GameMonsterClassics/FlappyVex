@@ -1,34 +1,32 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr230ogr3fo6b"]
+[gd_scene load_steps=13 format=3 uid="uid://dr230ogr3fo6b"]
 
 [ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_1oefd"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_loxv1"]
 [ext_resource type="Texture2D" uid="uid://bd5xnd8qs0puh" path="res://assets/title.png" id="2_lfio8"]
+[ext_resource type="Texture2D" uid="uid://umnj17dosdv8" path="res://assets/gui.png" id="3_ogq68"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h53r"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7y4y"]
-bg_color = Color(0.111197, 0.111197, 0.111197, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw5yh"]
+atlas = ExtResource("3_ogq68")
+region = Rect2(1, 17, 30, 14)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuy7y"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pt1m"]
+texture = SubResource("AtlasTexture_kw5yh")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to5s7"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw1xm"]
+atlas = ExtResource("3_ogq68")
+region = Rect2(1, 34, 30, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0qyjc"]
+texture = SubResource("AtlasTexture_mw1xm")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8u1b"]
+atlas = ExtResource("3_ogq68")
+region = Rect2(1, 1, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7h5l7"]
+texture = SubResource("AtlasTexture_q8u1b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vc2n8"]
 texture = ExtResource("2_lfio8")
@@ -49,21 +47,21 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -120.0
-offset_right = 72.0
-offset_bottom = -72.0
+offset_left = -48.0
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_1oefd")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1h53r")
-theme_override_styles/hover = SubResource("StyleBoxFlat_w7y4y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cuy7y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_to5s7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2pt1m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0qyjc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7h5l7")
 text = "Play"
 
 [node name="Title" type="Panel" parent="."]
@@ -71,10 +69,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -186.5
+offset_left = -188.0
 offset_top = 64.0
-offset_right = 186.5
-offset_bottom = 193.0
+offset_right = 188.0
+offset_bottom = 200.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_vc2n8")
 
