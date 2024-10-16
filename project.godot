@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ConfigFileHandler="*res://scripts/config_file_handler.gd"
 SaveFileHandler="*res://scripts/save_file_handler.gd"
 BackgroundMusicPlayer="*res://scenes/background_music_player.tscn"
+SfxPlayer="*res://scenes/sfx_player.tscn"
 
 [display]
 

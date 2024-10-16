@@ -39,12 +39,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func flap() -> void:
+	SfxPlayer.play_flap_sound()
 	velocity.y = lerp(velocity.y, float(flap_force), 1)
 	SaveFileHandler.total_flap += 1
 
 
 func player_death() -> void:
 	if main.player_dead or position.y < 0:
+		SfxPlayer.play_blast_sound()
 		queue_free()
 		main.game_stage = "over"
 		SaveFileHandler.total_run += 1

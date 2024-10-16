@@ -60,6 +60,8 @@ func start_game() -> void:
 
 
 func add_score() -> void:
+	SfxPlayer.play_point_sound()
+	
 	score += 1
 	$CanvasLayer/Score.text = str(score)
 	
