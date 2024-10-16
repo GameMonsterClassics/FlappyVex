@@ -1,35 +1,111 @@
-[gd_scene load_steps=13 format=3 uid="uid://dr230ogr3fo6b"]
+[gd_scene load_steps=16 format=3 uid="uid://dr230ogr3fo6b"]
 
 [ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_1oefd"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_loxv1"]
 [ext_resource type="Texture2D" uid="uid://bd5xnd8qs0puh" path="res://assets/title.png" id="2_lfio8"]
-[ext_resource type="Texture2D" uid="uid://umnj17dosdv8" path="res://assets/gui.png" id="3_ogq68"]
+[ext_resource type="Texture2D" uid="uid://bpxavp6h56g7v" path="res://assets/icons.png" id="4_o8ikg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h53r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kw5yh"]
-atlas = ExtResource("3_ogq68")
-region = Rect2(1, 17, 30, 14)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ec0y"]
+bg_color = Color(0.12549, 0.235294, 0.337255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pt1m"]
-texture = SubResource("AtlasTexture_kw5yh")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mw1xm"]
-atlas = ExtResource("3_ogq68")
-region = Rect2(1, 34, 30, 13)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0qyjc"]
-texture = SubResource("AtlasTexture_mw1xm")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8u1b"]
-atlas = ExtResource("3_ogq68")
-region = Rect2(1, 1, 30, 14)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7h5l7"]
-texture = SubResource("AtlasTexture_q8u1b")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvrid"]
+bg_color = Color(0.0509804, 0.168627, 0.270588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vc2n8"]
 texture = ExtResource("2_lfio8")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ol8xg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pegc"]
+bg_color = Color(0.0509804, 0.168627, 0.270588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roqeo"]
+atlas = ExtResource("4_o8ikg")
+region = Rect2(3, 3, 10, 10)
+margin = Rect2(1, 0.25, 2, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcmis"]
+bg_color = Color(0.0509804, 0.168627, 0.270588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrdnd"]
+atlas = ExtResource("4_o8ikg")
+region = Rect2(51, 3, 10, 10)
+margin = Rect2(1, 0.25, 2, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksohq"]
+bg_color = Color(0.0509804, 0.168627, 0.270588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c43ub"]
+atlas = ExtResource("4_o8ikg")
+region = Rect2(35, 3, 10, 10)
+margin = Rect2(1, 0.25, 2, 0)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -40,28 +116,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_loxv1")
 
-[node name="Button" type="Button" parent="."]
+[node name="PlayButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -96.0
-offset_right = 48.0
-offset_bottom = -48.0
+offset_left = -80.0
+offset_top = -120.0
+offset_right = 80.0
+offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.92549, 0.839216, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.831373, 0.639216, 1)
+theme_override_colors/font_color = Color(1, 0.92549, 0.839216, 1)
 theme_override_fonts/font = ExtResource("1_1oefd")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1h53r")
-theme_override_styles/hover = SubResource("StyleBoxTexture_2pt1m")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_0qyjc")
-theme_override_styles/normal = SubResource("StyleBoxTexture_7h5l7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7ec0y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jvrid")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ec0y")
 text = "Play"
 
 [node name="Title" type="Panel" parent="."]
@@ -76,4 +152,70 @@ offset_bottom = 200.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_vc2n8")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ol8xg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7ec0y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6pegc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ec0y")
+icon = SubResource("AtlasTexture_roqeo")
+icon_alignment = 1
+expand_icon = true
+
+[node name="StatsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -64.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ol8xg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7ec0y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kcmis")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ec0y")
+icon = SubResource("AtlasTexture_wrdnd")
+icon_alignment = 1
+expand_icon = true
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -48.0
+offset_right = -112.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ol8xg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7ec0y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ksohq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ec0y")
+icon = SubResource("AtlasTexture_c43ub")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -62,36 +62,4 @@ vertical_alignment = 1
 [node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource("8_kt545")]
 visible = false
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = -15.0
-offset_bottom = -17.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("7_jxws7")
-text = "S"
-
-[node name="Button2" type="Button" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -48.0
-offset_right = -48.0
-offset_bottom = -17.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("7_jxws7")
-text = "P"
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
