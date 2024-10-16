@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqvht3bjb2igx"]
+[gd_scene load_steps=13 format=3 uid="uid://dqvht3bjb2igx"]
 
 [ext_resource type="Script" path="res://scripts/player_stats_menu.gd" id="1_4vn66"]
 [ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_20ns2"]
 [ext_resource type="PackedScene" uid="uid://b452q1llhe8jm" path="res://scenes/player_stat.tscn" id="2_rym15"]
+[ext_resource type="Texture2D" uid="uid://bpxavp6h56g7v" path="res://assets/icons.png" id="4_om850"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shq0m"]
 bg_color = Color(1, 0.831373, 0.639216, 1)
@@ -27,6 +28,50 @@ font_color = Color(0.12549, 0.235294, 0.337255, 1)
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odvnd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cki8r"]
+bg_color = Color(0.12549, 0.235294, 0.337255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r28m"]
+bg_color = Color(0.0509804, 0.168627, 0.270588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5l1w"]
+atlas = ExtResource("4_om850")
+region = Rect2(19, 3, 10, 10)
+margin = Rect2(1, 0.25, 2, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r8vh"]
+atlas = ExtResource("4_om850")
+region = Rect2(35, 3, 10, 10)
+margin = Rect2(1, 0.25, 2, 0)
 
 [node name="PlayerStatsMenu" type="Control"]
 layout_mode = 3
@@ -108,19 +153,47 @@ stat_type = "total_flap"
 layout_mode = 2
 stat_type = "total_run"
 
-[node name="Button" type="Button" parent="."]
+[node name="CreditsButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
+offset_left = -48.0
 offset_top = -48.0
 offset_right = -16.0
-offset_bottom = -17.0
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Q"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_odvnd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cki8r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5r28m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cki8r")
+icon = SubResource("AtlasTexture_b5l1w")
+icon_alignment = 1
+expand_icon = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -48.0
+offset_right = -64.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_odvnd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cki8r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5r28m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cki8r")
+icon = SubResource("AtlasTexture_0r8vh")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
