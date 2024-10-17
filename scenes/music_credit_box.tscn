@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://bb1wiaqcf2uoy"]
+
+[ext_resource type="Script" path="res://scripts/music_credit_box.gd" id="1_d58nw"]
+[ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_onrek"]
+[ext_resource type="Texture2D" uid="uid://bpxavp6h56g7v" path="res://assets/icons.png" id="2_iwcln"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rp5f2"]
+font = ExtResource("1_onrek")
+font_color = Color(0.12549, 0.235294, 0.337255, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0e8u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_433cr"]
+bg_color = Color(0.12549, 0.235294, 0.337255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cloa2"]
+bg_color = Color(0.0509804, 0.168627, 0.270588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4r51"]
+bg_color = Color(0.12549, 0.235294, 0.337255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpe8v"]
+atlas = ExtResource("2_iwcln")
+region = Rect2(67, 3, 10, 10)
+margin = Rect2(1, 0.25, 2, 0)
+
+[node name="MusicCreditBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d58nw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_right = 98.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Music Name
+By Artist"
+label_settings = SubResource("LabelSettings_rp5f2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l0e8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_433cr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cloa2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i4r51")
+icon = SubResource("AtlasTexture_wpe8v")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

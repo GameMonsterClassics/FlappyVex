@@ -23,5 +23,5 @@ bus = &"SFX"
 
 [node name="PointSounc" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_nbpgf")
-volume_db = -5.0
+volume_db = -10.0
 bus = &"SFX"

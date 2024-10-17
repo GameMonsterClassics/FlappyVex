@@ -1,0 +1,227 @@
+[gd_scene load_steps=14 format=3 uid="uid://cml8pxypf4l2l"]
+
+[ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_sn1gm"]
+[ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_y7lvc"]
+[ext_resource type="Texture2D" uid="uid://bpxavp6h56g7v" path="res://assets/icons.png" id="2_ll37y"]
+[ext_resource type="PackedScene" uid="uid://c3m285g46ym88" path="res://scenes/development_team_credits.tscn" id="3_fxdr3"]
+[ext_resource type="PackedScene" uid="uid://bb1wiaqcf2uoy" path="res://scenes/music_credit_box.tscn" id="3_t64ji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh6sa"]
+bg_color = Color(1, 0.831373, 0.639216, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.12549, 0.235294, 0.337255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfu7g"]
+bg_color = Color(1, 0.666667, 0.368627, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_85igh"]
+font = ExtResource("1_y7lvc")
+font_size = 32
+font_color = Color(0.12549, 0.235294, 0.337255, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7qui"]
+font = ExtResource("1_y7lvc")
+font_size = 32
+font_color = Color(0.12549, 0.235294, 0.337255, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apfy7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yr3q8"]
+bg_color = Color(0.12549, 0.235294, 0.337255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpcpg"]
+bg_color = Color(0.0509804, 0.168627, 0.270588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0509804, 0.168627, 0.270588, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.784314)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syq1u"]
+atlas = ExtResource("2_ll37y")
+region = Rect2(35, 3, 10, 10)
+margin = Rect2(1, 0.25, 2, 0)
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sn1gm")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gh6sa")
+
+[node name="Header" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cfu7g")
+
+[node name="Label" type="Label" parent="Header"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 48.0
+grow_horizontal = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_85igh")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 64
+
+[node name="DevelopmentTeamCredits" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_fxdr3")]
+custom_minimum_size = Vector2(0, 156)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MusicCredits" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music Credits"
+label_settings = SubResource("LabelSettings_u7qui")
+
+[node name="Music" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_t64ji")]
+layout_mode = 2
+music_name = "Good Night"
+artist_name = "FASSounds"
+music_link = "https://pixabay.com/music/beats-good-night-lofi-cozy-chill-music-160166/"
+
+[node name="Music2" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_t64ji")]
+layout_mode = 2
+music_name = "Split Memmories"
+artist_name = "SweetBeats808s"
+music_link = "https://pixabay.com/music/beats-cozy-lofi-beat-split-memmories-248205/"
+
+[node name="Music3" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_t64ji")]
+layout_mode = 2
+music_name = "Midnight Dreams"
+artist_name = "LofiVision"
+music_link = "https://pixabay.com/music/beats-midnight-dreams-241994/"
+
+[node name="Music4" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_t64ji")]
+layout_mode = 2
+music_name = "Empty Mind"
+artist_name = "Lofi_hour"
+music_link = "https://pixabay.com/music/beats-empty-mind-118973/"
+
+[node name="Music5" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_t64ji")]
+layout_mode = 2
+music_name = "Sleepy Cat"
+artist_name = "Lofi_hour"
+music_link = "https://pixabay.com/music/beats-sleepy-cat-118974/"
+
+[node name="Music6" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_t64ji")]
+layout_mode = 2
+music_name = "A Cozy Day"
+artist_name = "Lofi_hour"
+music_link = "https://pixabay.com/music/beats-a-cozy-day-114852/"
+
+[node name="Music7" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_t64ji")]
+layout_mode = 2
+music_name = "Backyard"
+artist_name = "Lofium"
+music_link = "https://pixabay.com/music/beats-lofi-song-backyard-by-lofium-242713/"
+
+[node name="Music8" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_t64ji")]
+layout_mode = 2
+music_name = "Altitude"
+artist_name = "Snoozybeats"
+music_link = "https://pixabay.com/music/beats-altitude-chill-lofi-248756/"
+
+[node name="SpecialThanks" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Special Thanks
+To InfamousVex"
+label_settings = SubResource("LabelSettings_u7qui")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_apfy7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yr3q8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xpcpg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yr3q8")
+icon = SubResource("AtlasTexture_syq1u")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
