@@ -22,6 +22,7 @@ func _ready() -> void:
 
 
 func _on_h_slider_value_changed(value: float) -> void:
+	SfxPlayer.play_click_sound()
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
 
 
@@ -31,6 +32,7 @@ func _on_h_slider_drag_ended(value_changed: bool) -> void:
 
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
+	SfxPlayer.play_click_sound()
 	if toggled_on:
 		AudioServer.set_bus_mute(bus_index, false)
 		h_slider.editable = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cml8pxypf4l2l"]
+[gd_scene load_steps=15 format=3 uid="uid://cml8pxypf4l2l"]
 
 [ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_sn1gm"]
 [ext_resource type="FontFile" uid="uid://dd3mj536r00l7" path="res://assets/PressStart2P-Regular.ttf" id="1_y7lvc"]
@@ -33,6 +33,10 @@ shadow_offset = Vector2(-2, 2)
 [sub_resource type="LabelSettings" id="LabelSettings_u7qui"]
 font = ExtResource("1_y7lvc")
 font_size = 32
+font_color = Color(0.12549, 0.235294, 0.337255, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rlvs8"]
+font = ExtResource("1_y7lvc")
 font_color = Color(0.12549, 0.235294, 0.337255, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apfy7"]
@@ -200,6 +204,14 @@ layout_mode = 2
 text = "Special Thanks
 To InfamousVex"
 label_settings = SubResource("LabelSettings_u7qui")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpecialThanks2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "This game is a copy of 
+Flappy Bird game."
+label_settings = SubResource("LabelSettings_rlvs8")
 horizontal_alignment = 1
 vertical_alignment = 1
 

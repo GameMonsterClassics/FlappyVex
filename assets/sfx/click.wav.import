@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d2iaxc8uhq2qf"
-path="res://.godot/imported/wing.wav-1a1216c6bcd4323f2aebf01357f5c56e.sample"
+uid="uid://bi3vf154qm7h6"
+path="res://.godot/imported/click.wav-145eb8f5bc1c5c68916ac35bed5bc05f.sample"
 
 [deps]
 
-source_file="res://assets/sfx/wing.wav"
-dest_files=["res://.godot/imported/wing.wav-1a1216c6bcd4323f2aebf01357f5c56e.sample"]
+source_file="res://assets/sfx/click.wav"
+dest_files=["res://.godot/imported/click.wav-145eb8f5bc1c5c68916ac35bed5bc05f.sample"]
 
 [params]
 

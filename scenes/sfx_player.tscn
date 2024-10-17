@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddmyvovbhye3r"]
 
 [ext_resource type="Script" path="res://scripts/sfx_player.gd" id="1_ajhew"]
-[ext_resource type="AudioStream" uid="uid://bkd63wr8opsie" path="res://assets/sfx/click.mp3" id="2_ws4h6"]
+[ext_resource type="AudioStream" uid="uid://bi3vf154qm7h6" path="res://assets/sfx/click.wav" id="2_bq81f"]
 [ext_resource type="AudioStream" uid="uid://b1m67qgmr84g" path="res://assets/sfx/swoosh.wav" id="3_emxu7"]
-[ext_resource type="AudioStream" uid="uid://dbe4yu4132ti3" path="res://assets/sfx/blast.wav" id="4_n0d2a"]
+[ext_resource type="AudioStream" uid="uid://bok0h17vrvw2o" path="res://assets/sfx/blast.wav" id="4_n0d2a"]
 [ext_resource type="AudioStream" uid="uid://cs271aqqwnced" path="res://assets/sfx/point.wav" id="5_nbpgf"]
 
 [node name="SfxPlayer" type="Node"]
 script = ExtResource("1_ajhew")
 
 [node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_ws4h6")
+stream = ExtResource("2_bq81f")
 bus = &"SFX"
 
 [node name="FlapSound" type="AudioStreamPlayer2D" parent="."]

@@ -10,6 +10,7 @@ func _ready() -> void:
 
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
+	SfxPlayer.play_click_sound()
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		ConfigFileHandler.save_video_settings("fullscreen", true)
