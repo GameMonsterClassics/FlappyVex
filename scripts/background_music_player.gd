@@ -18,25 +18,18 @@ func load_songs() -> Array:
 	var dir = DirAccess.open(music_folder)
 	
 	if not dir:
-		print("No Directory.")
 		return []
 	
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	
 	while file_name != "":
-		if file_name.ends_with(".mp3") or file_name.ends_with(".mp3.import"):
-			print(file_name)
+		if file_name.ends_with(".mp3.import"):
 			if file_name.ends_with(".mp3.import"):
 				file_name = file_name.replace(".mp3.import", ".mp3")
 			files.append(music_folder + file_name)
 		file_name = dir.get_next()
 	dir.list_dir_end()
-	
-	if files == []:
-		print("No song found.")
-	
-	print(files)
 	
 	return files
 
@@ -46,9 +39,6 @@ func select_random_song() -> String:
 	
 	while new_song == current_song or new_song == previous_song:
 		new_song = song_list[randi() % song_list.size()]
-	
-	if new_song == "" or not new_song:
-		print("Error, no new song.")
 	
 	return new_song
 

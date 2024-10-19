@@ -11,6 +11,8 @@ config_version=5
 [application]
 
 config/name="Flappy Vex"
+config/description="Flappy Vex is another on of those copies of Flappy Bird game."
+config/version="1.0.0.0"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
